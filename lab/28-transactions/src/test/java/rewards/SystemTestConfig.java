@@ -9,6 +9,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 import config.RewardsConfig;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionManager;
 
 
@@ -36,7 +37,7 @@ public class SystemTestConfig {
 	//           How does it know which dataSource to manage?
 
 	@Bean
-	public TransactionManager transactionManager(DataSource dataSource){
+	public PlatformTransactionManager transactionManager(DataSource dataSource){
 		return new DataSourceTransactionManager(dataSource);
 	}
 	
